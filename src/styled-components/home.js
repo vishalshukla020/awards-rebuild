@@ -50,7 +50,7 @@ export const BannerContent = styled(motion.div)`
 
     @media (max-width: 900px) {
       font-size: 40vw;
-      line-height: 29vw;
+      line-height: 30vw;
     }
   }
 `;

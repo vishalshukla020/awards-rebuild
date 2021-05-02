@@ -1,6 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 
 import { Container, Flex } from "../../styled-components/GlobalStyles";
 import {
@@ -17,21 +16,10 @@ export default function HomeFeatured({
   setToggleMenu,
 }) {
   const [hovered, setHovered] = useState(false);
-  const animation = useAnimation();
-  const [featuredRef, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "-300px",
-  });
 
-  useEffect(() => {
-    if (inView) {
-      animation.start("visible");
-    }
-  }, [animation, inView]);
   return (
     <HomeFeaturedSection
-      ref={featuredRef}
-      animate={animation}
+      animate="visible"
       initial="hidden"
       variants={{
         hidden: {

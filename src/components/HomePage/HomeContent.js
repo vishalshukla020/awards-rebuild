@@ -1,28 +1,11 @@
-import { useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-
 import { HomeContentSection } from "../../styled-components/home";
 import { Container } from "../../styled-components/GlobalStyles";
 
 export default function HomeContent() {
-  const animation = useAnimation();
-  const [contentRef, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "-300px",
-  });
-
-  useEffect(() => {
-    if (inView) {
-      animation.start("visible");
-    }
-  }, [animation, inView]);
-
   return (
     <HomeContentSection
-      ref={contentRef}
       initial="hidden"
-      animate={animation}
+      animate="visible"
       variants={{
         hidden: { y: 92, opacity: 0 },
         visible: {

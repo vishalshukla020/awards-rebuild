@@ -9,6 +9,9 @@ export const FooterSection = styled.div`
   @media (max-width: 425px) {
     padding-left: 10px;
   }
+  @media (min-width: 425px) {
+    padding: 0 7vw;
+  }
 
   .icons {
     svg {

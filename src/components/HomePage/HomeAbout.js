@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 import { Container, Flex } from "../../styled-components/GlobalStyles";
 import {
@@ -67,22 +66,11 @@ const accordionIds = [
 
 export default function HomeAbout({ onCursorChange }) {
   const [expanded, setExpanded] = useState(0);
-  const animation = useAnimation();
-  const [aboutRef, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "-200px",
-  });
 
-  useEffect(() => {
-    if (inView) {
-      animation.start("visible");
-    }
-  });
   return (
     <HomeAboutSection
-      ref={aboutRef}
       initial={{ opacity: 0, y: 72 }}
-      animate={animation}
+      animate="visible"
       variants={{
         visible: {
           opacity: 1,

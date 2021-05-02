@@ -6,7 +6,7 @@ export const NavigationSection = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 
@@ -49,6 +49,8 @@ export const NavLink = styled.div`
   align-items: center;
   ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
     li {
       font-size: 2.5rem;
       font-weight: 700;
@@ -98,6 +100,7 @@ export const NavVideo = styled.div`
     height: 100%;
     width: 100%;
     position: absolute;
+    left: -1px;
   }
   .video {
     position: absolute;
@@ -116,13 +119,30 @@ export const NavFooter = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+
   height: 10vh;
+  width: 100%;
+  margin-top: 100px;
+  padding-left: 20px;
+
+  @media (max-width: 425px) {
+    padding-left: 10px;
+  }
+  @media (min-width: 425px) {
+    padding: 0 7vw;
+  }
 
   .icons {
     svg {
       height: 25px;
       width: 25px;
       margin-right: 20px;
+      @media (max-width: 425px) {
+        margin-right: 10px;
+        height: 20px;
+        width: 20px;
+      }
+
       path {
         fill: ${(props) => props.theme.text};
       }
@@ -132,5 +152,8 @@ export const NavFooter = styled.div`
     font-size: 1.2rem;
     font-weight: 500;
     color: ${(props) => props.theme.text};
+    @media (max-width: 425px) {
+      font-size: 1rem;
+    }
   }
 `;

@@ -138,7 +138,7 @@ export default function Navigation({
                 </ul>
               </NavLink>
               <NavFooter>
-                <Container>
+                <Container fluid>
                   <Flex spaceBetween>
                     <div className="content">
                       <span>&#169;Furrow Studios | {year} </span>
